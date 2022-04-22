@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import GlobalStyles from './styles/Global'
 import Header from './Header'
 import MainContent from './MainContent'
-import GlobalStyles from './styles/Global'
+import Footer from "./Footer";
 
 
 function App() {
@@ -10,6 +10,7 @@ function App() {
       <GlobalStyles />
       <Header/>
       <MainContent />
+      <Footer/>
     </>
   )
 }

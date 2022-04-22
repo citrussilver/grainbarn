@@ -6,12 +6,14 @@ function DataDetail(props) {
     return (
         <StyledDataDetail>
             <p className="text-3xl whitespace-nowrap">{props.name}</p>
-            { props.aveQtySoldDaily ? <p className='text-sm'>Ave. quantity sold per day</p> : '' }
+            { props.customerType ? <p className='text-base'>{props.customerType}</p> : '' }
+            { props.customerCount ? <p className='text-4xl'>{props.customerCount}</p> : '' }
+            { props.aveQtySoldDaily ? <p className='text-sm'>Ave. qty sold per day</p> : '' }
             {
                 props.aveQtySoldDaily ?
                 <NumberFormat 
                     value={props.aveQtySoldDaily}
-                    className="text-4xl font-medium"
+                    className="text-4xl font-medium whitespace-nowrap"
                     displayType={'text'}
                     thousandSeparator={true}
                     renderText={(value, props) => <p {...props}>{value}</p>}
@@ -19,7 +21,7 @@ function DataDetail(props) {
                 :
                 <NumberFormat 
                     value={props.aveSalesPerDay}
-                    className="text-4xl font-medium"
+                    className="whitespace-nowrap"
                     displayType={'text'}
                     prefix={'₱ '}
                     thousandSeparator={true}
