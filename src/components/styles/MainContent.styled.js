@@ -4,7 +4,6 @@ export const StyledMainContent = styled.div`
     background-color: var(--pale-green);
     font-family: var(--commont-font);
     font-weight: 100;
-    height: 100vh;
     display: grid;
     grid-template-columns: 0.2fr 1fr;
 

@@ -4,18 +4,17 @@ import NumberFormat from 'react-number-format'
 
 function Card(props){
 
-    console.log(props.bgColor);
-
     return  (
        <StyledCard bgColor={props.bgColor}>
            <StyledTitle className="text-xl">{props.dataLabel}</StyledTitle>
+           <br/>
            <p className="text-2xl whitespace-nowrap">{props.name}</p>
+           { props.aveQtySoldDaily ? <p className='text-sm'>Ave. qty sold per day</p> : '' }
            { props.aveQtySoldDaily > 0 ? 
                 <NumberFormat 
                     value={props.aveQtySoldDaily}
                     className="text-4xl"
                     displayType={'text'}
-                    prefix={'₱ '}
                     thousandSeparator={true}
                     renderText={(value, props) => <p {...props}>{value}</p>}
                 />
