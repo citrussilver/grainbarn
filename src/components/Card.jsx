@@ -6,10 +6,10 @@ function Card(props){
 
     return  (
        <StyledCard bgColor={props.bgColor}>
-           <StyledTitle className="text-xl">{props.dataLabel}</StyledTitle>
+           <StyledTitle className="text-xl whitespace-nowrap">{props.dataLabel}</StyledTitle>
            <br/>
            <p className="text-2xl whitespace-nowrap">{props.name}</p>
-           { props.aveQtySoldDaily ? <p className='text-sm'>Ave. qty sold per day</p> : '' }
+           { props.aveQtySoldDaily ? <p className='text-sm  whitespace-nowrap'>Ave. qty sold per day</p> : '' }
            { props.aveQtySoldDaily > 0 ? 
                 <NumberFormat 
                     value={props.aveQtySoldDaily}

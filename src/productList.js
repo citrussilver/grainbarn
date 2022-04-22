@@ -64,7 +64,7 @@
             productId: 'PRD-11',
             productName: "Wheat R",
             desc: "R Grade Wheat",
-            aveQtySoldDaily: 1200,
+            aveQtySoldDaily: 200,
         },
         {
             productId: 'PRD-12',
