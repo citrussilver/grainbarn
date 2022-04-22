@@ -4,7 +4,7 @@ import { StyledFooter } from './styles/Footer.styled'
 function Footer() {
   return (
     <StyledFooter>
-      <p className="ml-4">2022 Lan Nachor</p>
+      <p>2022 Lan</p>
     </StyledFooter>
   );
 }

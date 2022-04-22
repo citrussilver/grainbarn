@@ -44,6 +44,11 @@ const customersData = [
         customerName: 'Yelan',
         registerDate: "2022-04-22T09:45:00.781Z",
     },
+    {
+        customerId: 'CUST-010',
+        customerName: 'Shinobu',
+        registerDate: "2022-04-18T09:45:00.781Z",
+    },
 ];
 
 export default customersData;

@@ -5,7 +5,7 @@ export const StyledHeader = styled.header`
     font-weight: 300;
     font-size: 2rem;
     background-color: #464F41;
-    padding: 2rem 1rem;
+    padding: 2rem 2.5rem;
     color: #fff;
     display: flex;
     align-items: center;
