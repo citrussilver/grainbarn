@@ -15,10 +15,13 @@ const GlobalStyles = createGlobalStyle`
         --pale-dirty-white: #e4e0d5;
         --pale-yellow: #F1ECC3;
         --pale-brown: #7C7575;
+        --pale-blue: #6E85B2;
         --color1: #F1ECC3;
         --color2: #eefcef;
         --color3: #e6f5fa;
         --color4: #f9f8f3;
+        --ani-duration: 1s;
+        --ani-fill-mode: forwards;
     }
 
     .multi-info-card {
@@ -47,6 +50,19 @@ const GlobalStyles = createGlobalStyle`
 
     .color4 {
         background-color: var(--color4);
+    }
+
+    .common-animate {
+        opacity: 0;
+        animation-name: default-animate;
+        animation-duration: var(--ani-duration);
+        animation-fill-mode: var(--ani-fill-mode);
+    }
+
+    @keyframes default-animate {
+        to {
+            opacity: 1;
+        }
     }
 
     @media (max-width: 768px) {

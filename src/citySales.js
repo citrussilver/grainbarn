@@ -24,6 +24,11 @@ const cityWideSalesData = [
         cityName: "Snezhnaya",
         aveSalesPerDay: 44467132.19,
     },
+    {
+        cityId: 'CT-6',
+        cityName: "Fontaine",
+        aveSalesPerDay: 44467132.19,
+    },
 ];
 
 export default cityWideSalesData;

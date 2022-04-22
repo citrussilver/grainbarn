@@ -8,7 +8,7 @@ function DataDetail(props) {
             <p className="text-3xl whitespace-nowrap">{props.name}</p>
             { props.customerType ? <p className='text-base'>{props.customerType}</p> : '' }
             { props.customerCount ? <p className='text-4xl'>{props.customerCount}</p> : '' }
-            { props.aveQtySoldDaily ? <p className='text-sm'>Ave. qty sold per day</p> : '' }
+            { props.aveQtySoldDaily ? <p className='text-sm whitespace-nowrap'>Ave. qty sold per day</p> : '' }
             {
                 props.aveQtySoldDaily ?
                 <NumberFormat 
