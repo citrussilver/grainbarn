@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyles = createGlobalStyle`
+
     * {
         box-sizing: border-box;
     }
@@ -11,27 +12,45 @@ const GlobalStyles = createGlobalStyle`
         --commont-font: font-family: 'Barlow', sans-serif;
         --pale-green: #BFCBA8;
         --pale-dark-green: #5B8A72;
+        --pale-dirty-white: #e4e0d5;
+        --color1: #ffeee2;
+        --color2: #eefcef;
+        --color3: #e6f5fa;
+        --color4: #f9f8f3;
     }
 
-    .mr-2 {
-        margin-right: 0.5rem;
+    .multi-info-card {
+        background-color: var(--pale-dirty-white);
+        margin: 1rem;
+        padding: 1.5rem 2rem;
+        border-radius: 1rem;
     }
 
-    .ml-4 {
-        margin-left: 1rem;
+    .test {
+        border-style: hidden dashed hidden;
+        border-color: var(--pale-dark-green);
     }
 
-    .ml-20 {
-        margin-left: 5rem;
+    .color1 {
+        background-color: var(--color1);
     }
 
-    .text-2xl {
-        font-size: 1.5rem;
-        line-height: 2rem; 
+    .color2 {
+        background-color: var(--color2);
     }
 
-    .flex {
-        display: flex;
+    .color3 {
+        background-color: var(--color3);
+    }
+
+    .color4 {
+        background-color: var(--color4);
+    }
+
+    @media (max-width: 768px) {
+        .sidebar-menu {
+            display: none;
+        }
     }
 `
 
