@@ -1,19 +1,30 @@
 import React from "react";
 import { StyledCard, StyledTitle } from './styles/Card.styled'
 import NumberFormat from 'react-number-format'
-import handleAveQtySoldDaily from '../functions/handleAveQtySoldDaily'
 
 function Card(props){
 
+    console.log(props.bgColor);
+
     return  (
-       <StyledCard>
-           <StyledTitle>{props.dataLabel}</StyledTitle>
-           <p className="ml-4 text-2xl">{props.name}</p>
-           { handleAveQtySoldDaily(props) }
-           { props.totalDaySale > 0 ? 
+       <StyledCard bgColor={props.bgColor}>
+           <StyledTitle className="text-xl">{props.dataLabel}</StyledTitle>
+           <p className="text-2xl whitespace-nowrap">{props.name}</p>
+           { props.aveQtySoldDaily > 0 ? 
+                <NumberFormat 
+                    value={props.aveQtySoldDaily}
+                    className="text-4xl"
+                    displayType={'text'}
+                    prefix={'₱ '}
+                    thousandSeparator={true}
+                    renderText={(value, props) => <p {...props}>{value}</p>}
+                />
+                : ''
+           }
+           { props.totalDaySale > 0 ?
             <NumberFormat 
                 value={props.totalDaySale}
-                className="ml-4 text-2xl"
+                className="text-4xl"
                 displayType={'text'}
                 thousandSeparator={true}
                 prefix={'₱ '}
@@ -24,7 +35,7 @@ function Card(props){
                 props.totalMonthSale > 0 ?
                 <NumberFormat 
                 value={props.totalMonthSale}
-                className="ml-4 text-2xl"
+                className="text-4xl"
                 displayType={'text'}
                 thousandSeparator={true}
                 prefix={'₱ '}
