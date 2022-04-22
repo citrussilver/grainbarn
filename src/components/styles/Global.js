@@ -13,7 +13,9 @@ const GlobalStyles = createGlobalStyle`
         --pale-green: #BFCBA8;
         --pale-dark-green: #5B8A72;
         --pale-dirty-white: #e4e0d5;
-        --color1: #ffeee2;
+        --pale-yellow: #F1ECC3;
+        --pale-brown: #7C7575;
+        --color1: #F1ECC3;
         --color2: #eefcef;
         --color3: #e6f5fa;
         --color4: #f9f8f3;

@@ -1,10 +1,9 @@
 import styled from 'styled-components'
 
-export const StyledHeader = styled.header`
+export const StyledFooter = styled.footer`
     font-family: var(--special-font);
     font-weight: 300;
-    font-size: 2rem;
-    background-color: #464F41;
+    background-color: var(--pale-brown);
     padding: 2rem 1rem;
     color: #fff;
     display: flex;

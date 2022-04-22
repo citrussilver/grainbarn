@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const handleColorType = color => {
     switch (color) {
         case "color1":
-            return "#ffeee2";
+            return "#92817A";
         case "color2":
             return "#eefcef";
         case "color3":
@@ -11,7 +11,7 @@ const handleColorType = color => {
         case "color4":
             return "#f4f5f9";
         default:
-            return "#f9f8f3";
+            return "#E8C07D";
     }
 };
 

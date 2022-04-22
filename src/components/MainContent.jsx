@@ -9,16 +9,24 @@ import slowMovingProductsFactory from "../factories/slowMovingProducts";
 import totalDaySale from '../functions/getTotalDaySale'
 import totalMonthSale from '../functions/getTotalMonthSale'
 import cityWideSales from '../citySales'
+import customersList from '../customers'
+import newAndExistingCustomersFactory from "../factories/newAndExistingCustomers";
+import getDateDifference from '../functions/getDateDifference'
 
 
 function MainContent() {
 
-    const topProdFactory = topSellingProductFactory(productList);
-    const topProduct = topProdFactory.getTopSellingProduct();
+    const topProdFactory = topSellingProductFactory(productList)
+    const topProduct = topProdFactory.getTopSellingProduct()
 
-    const slowMovingProdsFactory = slowMovingProductsFactory(productList);
-    const slowMovingProds = slowMovingProdsFactory.getSlowMovingProducts();
-    console.log(slowMovingProds);
+    const slowMovingProdsFactory = slowMovingProductsFactory(productList)
+    const slowMovingProds = slowMovingProdsFactory.getSlowMovingProducts()
+
+    const newAndExistCustomersFactory = newAndExistingCustomersFactory(customersList)
+    const existingCustomers = newAndExistCustomersFactory.setExistingCustomers()
+    console.log(existingCustomers.length)
+    const newCustomers = newAndExistCustomersFactory.setNewCustomers()
+    console.log(newCustomers.length)
 
     return (
         <StyledMainContent>
@@ -28,25 +36,40 @@ function MainContent() {
             <StyledArticle>
                 <div className="lg:flex">
                     <Card
-                        key={1}
+                        key={'SL-1'}
                         mainLabel={"Sales"}
                         dataLabel={"Total sales for the day"}
                         totalDaySale={totalDaySale(productList)}
                         bgColor={"color1"}
                     />
                     <Card
-                        key={2}
+                        key={'SL-2'}
                         dataLabel={"Total sales for the month"}
                         totalMonthSale={totalMonthSale(productList)}
                         bgColor={"color3"}
                     />
                 </div>
-                <Card
-                    key={3}
-                    dataLabel={"Top selling product"}
-                    name={topProduct.productName}
-                    aveQtySoldDaily={topProduct.aveQtySoldDaily}
-                />
+                <div className="lg:flex multi-info-card color1">
+                    <Card
+                        key={3}
+                        dataLabel={"Top selling product"}
+                        name={topProduct.productName}
+                        aveQtySoldDaily={topProduct.aveQtySoldDaily}
+                    />
+                    <div className="multi-info-card color1">
+                    <p className="text-2xl">Slow Moving Products</p>
+                    <div className="lg:flex">
+                        {slowMovingProds.map((product) => 
+                            //product.productName + ' ' + product.aveQtySoldDaily
+                            <DataDetail
+                                key={product.productId}
+                                name={product.productName}
+                                aveQtySoldDaily={product.aveQtySoldDaily}
+                            />
+                        )}
+                    </div>
+                </div>
+                </div>
                 <div className="multi-info-card color3">
                     <p className="text-2xl">Sales per city</p>
                     <div className="lg:flex">
@@ -60,19 +83,22 @@ function MainContent() {
                         )}
                     </div>
                 </div>
-                <div className="multi-info-card color1">
-                    <p className="text-2xl">Slow Moving Products</p>
-                    <div className="lg:flex">
-                        {slowMovingProds.map((product) => 
-                            //product.productName + ' ' + product.aveQtySoldDaily
+                
+                <div className="multi-info-card color2">
+                        <p className="text-2xl">Site visitors</p>
+                        <div className="lg:flex">
                             <DataDetail
-                                key={product.productId}
-                                name={product.productName}
-                                aveQtySoldDaily={product.aveQtySoldDaily}
+                                key={'SVD-1'}
+                                customerType={'New Customers'}
+                                customerCount={newCustomers.length}
                             />
-                        )}
+                            <DataDetail
+                                key={'SVD-2'}
+                                customerType={'Existing Customers'}
+                                customerCount={existingCustomers.length}
+                            />
+                        </div>
                     </div>
-                </div>
             </StyledArticle>
         </StyledMainContent>
     )
