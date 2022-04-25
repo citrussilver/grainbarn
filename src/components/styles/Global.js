@@ -59,15 +59,30 @@ const GlobalStyles = createGlobalStyle`
         animation-fill-mode: var(--ani-fill-mode);
     }
 
+    .width-fc {
+        width: fit-content;
+    }
+
+
     @keyframes default-animate {
         to {
             opacity: 1;
         }
     }
 
+    @media (max-width: 640px) {
+        .width-fc {
+            width: unset;
+        }
+    }
+
     @media (max-width: 768px) {
         .sidebar-menu {
             display: none;
+        }
+
+        .width-fc {
+            width: unset;
         }
     }
 `
