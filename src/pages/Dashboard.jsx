@@ -80,7 +80,7 @@ function Dashboard() {
             </div>
         </div>
         
-        <div className="multi-info-card color2">
+        <div className="multi-info-card color2 width-fc">
             <p className="text-2xl">Site visitors</p>
             <div className="lg:flex">
                 <DataDetail
