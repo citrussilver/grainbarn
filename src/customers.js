@@ -2,7 +2,7 @@ const customersData = [
     {
         customerId: 'CUST-001',
         customerName: 'Ganyu',
-        registerDate: "2022-04-22T07:44:27.197Z",
+        registerDate: "2022-04-25T07:18:08.176Z",
     },
     {
         customerId: 'CUST-002',
@@ -27,7 +27,7 @@ const customersData = [
     {
         customerId: 'CUST-006',
         customerName: 'Diona',
-        registerDate: "2022-04-22T07:45:29.712Z",
+        registerDate: "2022-04-25T07:18:08.176Z",
     },
     {
         customerId: 'CUST-007',
