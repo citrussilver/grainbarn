@@ -7,7 +7,7 @@ function DataDetail(props) {
         <StyledDataDetail>
             <p className="text-3xl whitespace-nowrap">{props.name}</p>
             { props.customerType ? <p className='text-base'>{props.customerType}</p> : '' }
-            { props.customerCount ? <p className='text-4xl'>{props.customerCount}</p> : '' }
+            { props.customerCount === 0 ? <p className='text-4xl'>0</p> : <p className='text-4xl'>{props.customerCount}</p> }
             { props.aveQtySoldDaily ? <p className='text-sm whitespace-nowrap'>Ave. qty sold per day</p> : '' }
             {
                 props.aveQtySoldDaily ?
@@ -18,7 +18,10 @@ function DataDetail(props) {
                     thousandSeparator={true}
                     renderText={(value, props) => <p {...props}>{value}</p>}
                 />
-                :
+                : ''
+            }
+            {
+                props.aveSalesPerDay ?
                 <NumberFormat 
                     value={props.aveSalesPerDay}
                     className="whitespace-nowrap"
@@ -27,6 +30,7 @@ function DataDetail(props) {
                     thousandSeparator={true}
                     renderText={(value, props) => <p {...props}>{value}</p>}
                 />
+                : ''
             }
             
         </StyledDataDetail>
